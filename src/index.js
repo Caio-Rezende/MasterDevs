@@ -1,26 +1,36 @@
 import css from "./main.css";
 
-const blurTextShadow = 10
+const blurTextShadow = 20;
 
-function cursorMoveShadow(cursorX, cursorY) {
-    const windowX = window.screen.width
-    const windowY = window.screen.height
+window.onload = () => {
+  const affectedBlurElements = document.querySelectorAll(".cursorMoveShadow");
+
+  function init(node) {
+    node.style.textShadow = `0px 0px ${blurTextShadow}px`;
+  }
+
+  function cursorMoveShadow(cursorX, cursorY) {
+    const windowX = window.screen.width;
+    const windowY = window.screen.height;
 
     return (node) => {
-        const nodePosX = Math.floor((node.offsetWidth / 2) + node.offsetLeft)
-        const nodePosY = Math.floor((node.offsetHeight / 2) + node.offsetTop)
+      const nodePosX = Math.floor(node.offsetWidth / 2 + node.offsetLeft);
+      const nodePosY = Math.floor(node.offsetHeight / 2 + node.offsetTop);
 
-        const x = Math.floor(((nodePosX - curosrX) / windowX) * 100)
-        const y = Math.floor(((nodePosY - curosrY) / windowY) * 100)
+      const x = Math.floor(((nodePosX - cursorX) / windowX) * 100);
+      const y = Math.floor(((nodePosY - cursorY) / windowY) * 100);
 
-        node.style.textShadow = `${x}px ${y}px ${blurTextShadow}px`
-    }
-}
+      node.style.textShadow = `${x}px ${y}px ${blurTextShadow}px`;
+    };
+  }
 
-window.on('mousemove', (ev) => {
-    const nodes = document.querySelector('.cursorMoveShadow')
+  window.addEventListener("mousemove", (ev) => {
+    const nodes = affectedBlurElements;
 
-    const fn = cursorMoveShadow(ev.screenX, ev.screenY)
+    const fn = cursorMoveShadow(ev.x, ev.y);
 
-    nodes.forEach(fn)
-})
+    nodes.forEach(fn);
+  });
+
+  affectedBlurElements.forEach(init);
+};
