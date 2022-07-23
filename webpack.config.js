@@ -24,7 +24,19 @@ module.exports = {
               }
             },
             {
-              loader: 'postcss-loader'
+              loader: 'postcss-loader',
+              options: {
+                postcssOptions: {
+                  plugins: [
+                    [
+                      "postcss-preset-env",
+                      {
+                        // Options
+                      },
+                    ],
+                  ],
+                },
+              },
             }
           ],
       },
