@@ -2,19 +2,19 @@ import { BoxNode } from "./boxNode";
 import { CircleNode } from "./circleNode";
 
 export class CollidableCircleNode extends CircleNode {
-  whenCollideFn = null;
+  whenCollideFn: () => void = () => {};
   haveCollided = false;
 
-  constructor(node) {
+  constructor(node: HTMLElement) {
     super(node);
   }
 }
 
 export class CollidableBoxNode extends BoxNode {
-  whenCollideFn = null;
+  whenCollideFn: () => void = () => {};
   haveCollided = false;
 
-  constructor(node) {
+  constructor(node: HTMLElement) {
     super(node);
   }
 }

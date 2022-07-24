@@ -4,7 +4,7 @@ export class BoxNode extends Node {
   width = 0;
   height = 0;
 
-  constructor(node) {
+  constructor(node: HTMLElement) {
     super(node);
 
     this.width = Number(node.offsetWidth);

@@ -1,10 +1,10 @@
 export class Node {
-  domNode = null;
-  style = null;
+  domNode: HTMLElement;
+  style: CSSStyleDeclaration;
   posX = 0;
   posY = 0;
 
-  constructor(node) {
+  constructor(node: HTMLElement) {
     this.domNode = node;
     this.style = node.style;
 

@@ -1,4 +1,6 @@
-export function collided(circle, rect) {
+import { BoxNode, CircleNode } from "../model";
+
+export function collided(circle: CircleNode, rect: BoxNode) {
   //leftLine
   var dx = Math.abs(circle.posX - rect.posX);
   var dy = Math.abs(circle.posY - rect.posY);
