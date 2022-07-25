@@ -9,10 +9,11 @@ window.onload = () => {
   new RandomPlacement(hiddenNodeId);
   const collider = new CheckCollideWithShadow(hiddenNodeId, shadowNodesClass);
   if (collider.element) {
-    collider.element.whenCollideFn = () => {
-      if (collider.element) {
-        collider.element.style.backgroundColor = "red";
-      }
+    collider.element.whenCollideStartFn = () => {
+      collider.element.style.backgroundColor = "white";
+    };
+    collider.element.whenCollideStopFn = () => {
+      collider.element.style.backgroundColor = "transparent";
     };
   }
   new ApplyShadow(shadowNodesClass);

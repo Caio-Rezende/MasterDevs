@@ -23,12 +23,18 @@ export class CheckCollideWithShadow {
   }
 
   listener = () => {
-    if (!this.element.haveCollided) {
-      this.checkIfCollided();
+    const collided = this.checkIfCollided();
+    if (collided && !this.element.haveCollided) {
+      this.element.haveCollided = true;
+      this.element.whenCollideStartFn();
+    } else if (!collided && this.element.haveCollided) {
+      this.element.haveCollided = false;
+      this.element.whenCollideStopFn();
     }
   };
 
-  checkIfCollided() {
+  checkIfCollided(): boolean {
+    let haveCollided = false;
     this.shadowElements.forEach((node) => {
       const shadowAt = /(-{0,1}[0-9]+)px (-{0,1}[0-9]+)px ([0-9]+)px/.exec(
         node.style.textShadow
@@ -44,13 +50,7 @@ export class CheckCollideWithShadow {
         node.width += blur;
         node.height += blur;
 
-        const haveCollided = collided(this.element, node);
-        if (haveCollided) {
-          this.element.haveCollided = true;
-          if (this.element.whenCollideFn) {
-            this.element.whenCollideFn();
-          }
-        }
+        haveCollided = haveCollided || collided(this.element, node);
 
         node.posX -= x;
         node.posY -= y;
@@ -58,5 +58,7 @@ export class CheckCollideWithShadow {
         node.height -= blur;
       }
     });
+
+    return haveCollided;
   }
 }
