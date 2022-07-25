@@ -7,6 +7,7 @@
     "noImplicitAny": true,
     "jsx": "react",
     "allowJs": true,
+    "sourceMap": true
   },
 
   "include": ["src", "./css.d.ts"]

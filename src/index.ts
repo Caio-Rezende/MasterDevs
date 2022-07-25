@@ -6,8 +6,18 @@ import {
 import { hiddenNodeId, shadowNodesClass } from "./constants";
 
 window.onload = () => {
-  new RandomPlacement(hiddenNodeId);
-  const collider = new CheckCollideWithShadow(hiddenNodeId, shadowNodesClass);
+  const hiddenElement = document.getElementById(hiddenNodeId);
+  const shadowElements = document.querySelectorAll<HTMLElement>(
+    `.${shadowNodesClass}`
+  );
+
+  if (!hiddenElement || shadowElements.length === 0) {
+    throw new Error("EntitiesNotFound");
+  }
+
+  new RandomPlacement(hiddenElement, shadowElements);
+
+  const collider = new CheckCollideWithShadow(hiddenElement, shadowElements);
   if (collider.element) {
     collider.element.whenCollideStartFn = () => {
       collider.element.style.backgroundColor = "white";
@@ -16,5 +26,5 @@ window.onload = () => {
       collider.element.style.backgroundColor = "transparent";
     };
   }
-  new ApplyShadow(shadowNodesClass);
+  new ApplyShadow(shadowElements);
 };

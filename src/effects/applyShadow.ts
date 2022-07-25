@@ -2,12 +2,12 @@ import { BoxNode } from "../model";
 import { hipotenuse } from "../utlis";
 
 export class ApplyShadow {
-  elements: BoxNode[] = [];
+  shadowElements: BoxNode[] = [];
 
-  constructor(shadowNodesClass: string) {
-    document
-      .querySelectorAll<HTMLElement>(`.${shadowNodesClass}`)
-      .forEach((domNode) => this.elements.push(new BoxNode(domNode)));
+  constructor(shadowElements: NodeListOf<HTMLElement>) {
+    shadowElements.forEach((domNode) =>
+      this.shadowElements.push(new BoxNode(domNode))
+    );
 
     window.addEventListener("mousemove", this.listener);
 
@@ -19,7 +19,7 @@ export class ApplyShadow {
   listener = (ev: MouseEvent) => {
     const fn = this.cursorMoveShadow(ev.x, ev.y);
 
-    this.elements.forEach(fn);
+    this.shadowElements.forEach(fn);
   };
 
   cursorMoveShadow(cursorX: number, cursorY: number) {

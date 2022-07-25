@@ -5,16 +5,14 @@ export class CheckCollideWithShadow {
   element: CollidableCircleNode;
   shadowElements: BoxNode[] = [];
 
-  constructor(elementId: string, shadowNodesClass: string) {
-    const domElement = document.getElementById(elementId);
-    if (!domElement) {
-      throw new Error("EntityNotFound to construct Collider");
-    }
-
+  constructor(
+    domElement: HTMLElement,
+    shadowElements: NodeListOf<HTMLElement>
+  ) {
     this.element = new CollidableCircleNode(domElement);
-    document
-      .querySelectorAll<HTMLElement>(`.${shadowNodesClass}`)
-      .forEach((domNode) => this.shadowElements.push(new BoxNode(domNode)));
+    shadowElements.forEach((domNode) =>
+      this.shadowElements.push(new BoxNode(domNode))
+    );
 
     window.addEventListener("mousemove", this.listener);
     window.addEventListener("unload", () => {

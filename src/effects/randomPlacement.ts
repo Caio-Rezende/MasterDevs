@@ -1,17 +1,47 @@
-import { BoxNode } from "../model";
+import { BoxNode, CircleNode } from "../model";
+import { collided } from "../utlis";
+
+interface TopLeft {
+  left: number;
+  top: number;
+}
 
 export class RandomPlacement {
-  constructor(elementId: string) {
-    const domElement = document.getElementById(elementId);
-    if (domElement) {
-      const el = new BoxNode(domElement);
+  el: CircleNode;
+  avoid: BoxNode[] = [];
 
-      el.style.top = `${this.getInLimit(window.innerHeight - el.height)}px`;
-      el.style.left = `${this.getInLimit(window.innerWidth - el.width)}px`;
-    }
+  constructor(domElement: HTMLElement, avoidElements: NodeListOf<HTMLElement>) {
+    this.el = new CircleNode(domElement);
+    avoidElements.forEach((domNode) => this.avoid.push(new BoxNode(domNode)));
+
+    const { top, left } = this.getInLimit();
+
+    this.el.style.left = `${left}px`;
+    this.el.style.top = `${top}px`;
   }
 
-  getInLimit(limit: number) {
-    return Math.max(Math.ceil(limit * Math.random()), 0);
+  protected getInLimit(): TopLeft {
+    const limitLeft = window.innerWidth - 2 * this.el.radius;
+    const limitTop = window.innerHeight - 2 * this.el.radius;
+
+    return this.generateRandom(limitLeft, limitTop);
+  }
+
+  protected generateRandom(limitLeft: number, limitTop: number): TopLeft {
+    this.el.posX = Math.ceil(limitLeft * Math.random());
+    this.el.posY = Math.ceil(limitTop * Math.random());
+
+    let hasCollided = false;
+
+    this.avoid.forEach((item) => (hasCollided ||= collided(this.el, item)));
+
+    if (!hasCollided) {
+      return {
+        left: this.el.posX,
+        top: this.el.posY,
+      };
+    }
+
+    return this.generateRandom(limitLeft, limitTop);
   }
 }
