@@ -1,7 +1,17 @@
-import { CollidableCircleNode, BoxNode } from "../model";
+import { InputListener, Move2D } from "../controllers";
+import {
+  CollidableCircleNode,
+  BoxNode,
+  Position,
+  AbsctractNode,
+} from "../models";
+import { Dimension } from "../models/dimension";
 import { collided } from "../utlis";
 
-export class CheckCollideWithShadow {
+export class CheckCollideWithShadow extends InputListener {
+  doMotion(moveBy: Move2D): void {
+    this.listener();
+  }
   element: CollidableCircleNode;
   shadowElements: BoxNode[] = [];
 
@@ -9,6 +19,7 @@ export class CheckCollideWithShadow {
     domElement: HTMLElement,
     shadowElements: NodeListOf<HTMLElement>
   ) {
+    super();
     this.element = new CollidableCircleNode(domElement);
     shadowElements.forEach((domNode) =>
       this.shadowElements.push(new BoxNode(domNode))
@@ -43,17 +54,19 @@ export class CheckCollideWithShadow {
         const y = Number(shadowAt[2]);
         const blur = Number(shadowAt[3]);
 
-        node.posX += x;
-        node.posY += y;
-        node.width += blur;
-        node.height += blur;
+        const abstractNode = new AbsctractNode(
+          node.domNode,
+          new Position({
+            x: node.posX + x,
+            y: node.posY + y,
+          }),
+          new Dimension({
+            width: node.width + blur,
+            height: node.height + blur,
+          })
+        );
 
-        haveCollided = haveCollided || collided(this.element, node);
-
-        node.posX -= x;
-        node.posY -= y;
-        node.width -= blur;
-        node.height -= blur;
+        haveCollided = haveCollided || collided(this.element, abstractNode);
       }
     });
 

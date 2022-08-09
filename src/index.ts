@@ -4,6 +4,7 @@ import {
   RandomPlacement,
 } from "./effects";
 import { hiddenNodeId, shadowNodesClass } from "./constants";
+import { InputController, MoveInScreenListener } from "./controllers";
 
 window.onload = () => {
   const hiddenElement = document.getElementById(hiddenNodeId);
@@ -27,4 +28,8 @@ window.onload = () => {
     };
   }
   new ApplyShadow(shadowElements);
+
+  const inputController = new InputController();
+  inputController.addListener(new MoveInScreenListener(hiddenElement));
+  inputController.addListener(collider);
 };

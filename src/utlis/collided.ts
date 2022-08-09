@@ -1,4 +1,4 @@
-import { BoxNode, CircleNode } from "../model";
+import { BoxNode, CircleNode } from "../models";
 
 export function collided(circle: CircleNode, rect: BoxNode) {
   //leftLine

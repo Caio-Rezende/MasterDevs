@@ -1,5 +1,5 @@
-import { BoxNode } from "../model";
-import { hipotenuse } from "../utlis";
+import { BoxNode } from "../models";
+import { hypotenuse } from "../utlis";
 
 export class ApplyShadow {
   shadowElements: BoxNode[] = [];
@@ -27,7 +27,7 @@ export class ApplyShadow {
       const x = Math.floor(node.posX - cursorX);
       const y = Math.floor(node.posY - cursorY);
 
-      const blurTextShadow = Math.ceil(Math.pow(hipotenuse(x, y), 1 / 2));
+      const blurTextShadow = Math.ceil(Math.pow(hypotenuse(x, y), 1 / 2));
 
       node.style.textShadow = `${x}px ${y}px ${blurTextShadow}px`;
     };

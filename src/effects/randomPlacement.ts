@@ -1,4 +1,4 @@
-import { BoxNode, CircleNode } from "../model";
+import { BoxNode, CircleNode, Position } from "../models";
 import { collided } from "../utlis";
 
 interface TopLeft {
@@ -28,8 +28,10 @@ export class RandomPlacement {
   }
 
   protected generateRandom(limitLeft: number, limitTop: number): TopLeft {
-    this.el.posX = Math.ceil(limitLeft * Math.random());
-    this.el.posY = Math.ceil(limitTop * Math.random());
+    const pos = new Position({
+      x: Math.ceil(limitLeft * Math.random()),
+      y: Math.ceil(limitTop * Math.random()),
+    });
 
     let hasCollided = false;
 
@@ -37,8 +39,8 @@ export class RandomPlacement {
 
     if (!hasCollided) {
       return {
-        left: this.el.posX,
-        top: this.el.posY,
+        left: pos.x,
+        top: pos.y,
       };
     }
 
