@@ -12,6 +12,13 @@ export class MoveInScreenListener extends InputListener {
     moveBy.x = parseInt(this.element.style.left) + moveBy.x;
     moveBy.y = parseInt(this.element.style.top) - moveBy.y;
 
+    this.applyConstraints(moveBy);
+
+    this.element.style.top = `${moveBy.y}px`;
+    this.element.style.left = `${moveBy.x}px`;
+  }
+
+  applyConstraints(moveBy: Move2D) {
     if (moveBy.x < 0) {
       moveBy.x = 0;
     }
@@ -24,8 +31,5 @@ export class MoveInScreenListener extends InputListener {
     if (moveBy.y + this.element.clientHeight >= window.innerHeight - 5) {
       moveBy.y = window.innerHeight - this.element.clientHeight - 5;
     }
-
-    this.element.style.top = `${moveBy.y}px`;
-    this.element.style.left = `${moveBy.x}px`;
   }
 }
