@@ -4,11 +4,15 @@ This project was made to sample programming skills I possess.
 
 ## HOW WORKS
 
+### Command Line
 $ npm install
 <br/>
 $ npm run dev
 
 -> Browse to localhost:9000
+
+### VSCode
+Hit F5, it should start the "webapack: serve dev" task and open the browser.
 
 ## AT DISPLAY
 
