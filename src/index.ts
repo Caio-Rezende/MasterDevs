@@ -27,9 +27,13 @@ window.onload = () => {
       collider.element.style.backgroundColor = "transparent";
     };
   }
-  new ApplyShadow(shadowElements);
+  const applyShadow = new ApplyShadow(shadowElements);
 
   const inputController = new InputController();
-  inputController.addListener(new MoveInScreenListener(hiddenElement));
-  inputController.addListener(collider);
+  
+  inputController.addKeyListener(new MoveInScreenListener(hiddenElement));
+  inputController.addKeyListener(collider);
+
+  inputController.addMouseListener(applyShadow);
+  inputController.addMouseListener(collider);
 };

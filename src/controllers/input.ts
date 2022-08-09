@@ -14,42 +14,51 @@ export class Move2D {
 
 const DEFAULT_MULTIPLIER = 5;
 const ALT_KEY_MULTIPLIER = 20;
-const INPUT_INTERVAL_BROADCAST = 300;
 
 export class InputController {
   multiplier = DEFAULT_MULTIPLIER;
   moveBy = new Move2D(0, 0);
-  listeners: InputListener[] = [];
+  keyListeners: InputListener[] = [];
+  mouseListeners: InputListener[] = [];
 
   constructor() {
-    window.addEventListener("keydown", this.listenForMotionInput.bind(this));
-    setInterval(
-      this.applyMotionToListeners.bind(this),
-      INPUT_INTERVAL_BROADCAST
-    );
+    window.addEventListener("keydown", this.listenForKeyInput.bind(this));
+    window.addEventListener("mousemove", this.listenForMouseInput.bind(this));
+
     window.addEventListener("unload", () => {
+      window.removeEventListener("keydown", this.listenForKeyInput.bind(this));
       window.removeEventListener(
-        "keydown",
-        this.listenForMotionInput.bind(this)
+        "mousemove",
+        this.listenForMouseInput.bind(this)
       );
     });
   }
 
-  addListener(a: InputListener) {
-    this.listeners.push(a);
+  addKeyListener(a: InputListener) {
+    this.keyListeners.push(a);
+  }
+
+  addMouseListener(a: InputListener) {
+    this.mouseListeners.push(a);
   }
 
   applyMotionToListeners() {
     const { x, y } = this.moveBy;
 
-    this.listeners.forEach((listener) => {
+    this.keyListeners.forEach((listener) => {
       listener.doMotion(new Move2D(x * this.multiplier, y * this.multiplier));
     });
-    
+
     this.moveBy = new Move2D(0, 0);
   }
 
-  listenForMotionInput(ev: KeyboardEvent) {
+  listenForMouseInput(ev: MouseEvent) {
+    this.mouseListeners.forEach((listener) =>
+      listener.doMotion(new Move2D(ev.x, ev.y))
+    );
+  }
+
+  listenForKeyInput(ev: KeyboardEvent) {
     this.multiplier = ev.altKey ? ALT_KEY_MULTIPLIER : DEFAULT_MULTIPLIER;
 
     switch (ev.key) {
@@ -70,5 +79,7 @@ export class InputController {
         this.moveBy.x--;
         break;
     }
+
+    this.applyMotionToListeners();
   }
 }

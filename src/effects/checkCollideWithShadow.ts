@@ -9,9 +9,6 @@ import { Dimension } from "../models/dimension";
 import { collided } from "../utlis";
 
 export class CheckCollideWithShadow extends InputListener {
-  doMotion(moveBy: Move2D): void {
-    this.listener();
-  }
   element: CollidableCircleNode;
   shadowElements: BoxNode[] = [];
 
@@ -24,14 +21,9 @@ export class CheckCollideWithShadow extends InputListener {
     shadowElements.forEach((domNode) =>
       this.shadowElements.push(new BoxNode(domNode))
     );
-
-    window.addEventListener("mousemove", this.listener);
-    window.addEventListener("unload", () => {
-      window.removeEventListener("mousemove", this.listener);
-    });
   }
 
-  listener = () => {
+  doMotion(moveBy: Move2D): void {
     const collided = this.checkIfCollided();
     if (collided && !this.element.haveCollided) {
       this.element.haveCollided = true;

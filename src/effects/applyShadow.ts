@@ -1,26 +1,22 @@
+import { InputListener, Move2D } from "../controllers";
 import { BoxNode } from "../models";
 import { hypotenuse } from "../utlis";
 
-export class ApplyShadow {
+export class ApplyShadow extends InputListener {
   shadowElements: BoxNode[] = [];
 
   constructor(shadowElements: NodeListOf<HTMLElement>) {
+    super();
     shadowElements.forEach((domNode) =>
       this.shadowElements.push(new BoxNode(domNode))
     );
-
-    window.addEventListener("mousemove", this.listener);
-
-    window.addEventListener("unload", () => {
-      window.removeEventListener("mousemove", this.listener);
-    });
   }
 
-  listener = (ev: MouseEvent) => {
-    const fn = this.cursorMoveShadow(ev.x, ev.y);
+  doMotion(moveBy: Move2D): void {
+    const fn = this.cursorMoveShadow(moveBy.x, moveBy.y);
 
     this.shadowElements.forEach(fn);
-  };
+  }
 
   cursorMoveShadow(cursorX: number, cursorY: number) {
     return (node: BoxNode) => {
