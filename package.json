@@ -4,7 +4,7 @@
   "description": "WebSite for MasterDev's showcase",
   "private": true,
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --mode=production",
     "dev": "webpack serve --mode=development --config webpack.dev.js --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
