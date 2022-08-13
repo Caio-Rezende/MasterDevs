@@ -19,19 +19,19 @@ export class InputController {
   multiplier = DEFAULT_MULTIPLIER;
   moveBy = new Move2D(0, 0);
   keyListeners: InputListener[] = [];
-  mouseListeners: InputListener[] = [];
+  moveListeners: InputListener[] = [];
 
   constructor() {
     window.addEventListener("keydown", this.listenForKeyInput.bind(this));
-    window.addEventListener("mousemove", this.listenForMouseInput.bind(this));
+    window.addEventListener("mousemove", this.listenForMouseMove.bind(this));
+    window.addEventListener("touchmove", this.listenForTouchMove.bind(this));
 
-    window.addEventListener("unload", () => {
-      window.removeEventListener("keydown", this.listenForKeyInput.bind(this));
-      window.removeEventListener(
-        "mousemove",
-        this.listenForMouseInput.bind(this)
-      );
-    });
+    window.addEventListener("unload", this.dispose);
+  }
+
+  dispose() {
+    window.removeEventListener("keydown", this.listenForKeyInput.bind(this));
+    window.removeEventListener("mousemove", this.listenForMouseMove.bind(this));
   }
 
   addKeyListener(a: InputListener) {
@@ -39,7 +39,7 @@ export class InputController {
   }
 
   addMouseListener(a: InputListener) {
-    this.mouseListeners.push(a);
+    this.moveListeners.push(a);
   }
 
   applyMotionToListeners() {
@@ -52,9 +52,16 @@ export class InputController {
     this.moveBy = new Move2D(0, 0);
   }
 
-  listenForMouseInput(ev: MouseEvent) {
-    this.mouseListeners.forEach((listener) =>
-      listener.doMotion(new Move2D(ev.x, ev.y))
+  listenForMouseMove(ev: MouseEvent) {
+    this.moveListeners.forEach((listener) =>
+      listener.doMotion(new Move2D(ev.clientX, ev.clientY))
+    );
+  }
+  listenForTouchMove(ev: TouchEvent) {
+    this.moveListeners.forEach((listener) =>
+      listener.doMotion(
+        new Move2D(ev.touches[0].clientX, ev.touches[0].clientY)
+      )
     );
   }
 

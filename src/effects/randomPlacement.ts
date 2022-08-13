@@ -1,4 +1,5 @@
-import { BoxNode, CircleNode, Position } from "../models";
+import { Move2D } from "../controllers";
+import { AbstractNode, BoxNode, CircleNode, Position } from "../models";
 import { collided } from "../utlis";
 
 interface TopLeft {
@@ -10,32 +11,53 @@ export class RandomPlacement {
   el: CircleNode;
   avoid: BoxNode[] = [];
 
-  constructor(domElement: HTMLElement, avoidElements: NodeListOf<HTMLElement>) {
+  constructor(
+    domElement: HTMLElement,
+    avoidElements: NodeListOf<HTMLElement>,
+    moveBy?: Move2D
+  ) {
     this.el = new CircleNode(domElement);
     avoidElements.forEach((domNode) => this.avoid.push(new BoxNode(domNode)));
 
-    const { top, left } = this.getInLimit();
+    let top = 0;
+    let left = 0;
+    try {
+      const limit = this.getInLimit(moveBy);
+      top = limit.top;
+      left = limit.left;
+    } catch (e) {}
 
     this.el.style.left = `${left}px`;
     this.el.style.top = `${top}px`;
   }
 
-  protected getInLimit(): TopLeft {
+  protected getInLimit(moveBy?: Move2D): TopLeft {
     const limitLeft = window.innerWidth - 2 * this.el.radius;
     const limitTop = window.innerHeight - 2 * this.el.radius;
 
-    return this.generateRandom(limitLeft, limitTop);
+    return this.generateRandom(limitLeft, limitTop, moveBy);
   }
 
-  protected generateRandom(limitLeft: number, limitTop: number): TopLeft {
+  protected generateRandom(
+    limitLeft: number,
+    limitTop: number,
+    moveBy?: Move2D
+  ): TopLeft {
     const pos = new Position({
-      x: Math.ceil(limitLeft * Math.random()),
-      y: Math.ceil(limitTop * Math.random()),
+      x: Math.ceil(limitLeft * Math.random()) + (moveBy?.x ?? 0),
+      y: Math.ceil(limitTop * Math.random()) + (moveBy?.y ?? 0),
     });
 
     let hasCollided = false;
 
-    this.avoid.forEach((item) => (hasCollided ||= collided(this.el, item)));
+    const abstractNode = new AbstractNode(
+      this.el.domNode,
+      pos,
+      this.el.dimension
+    );
+    this.avoid.forEach(
+      (item) => (hasCollided ||= collided(abstractNode, item))
+    );
 
     if (!hasCollided) {
       return {
@@ -44,6 +66,6 @@ export class RandomPlacement {
       };
     }
 
-    return this.generateRandom(limitLeft, limitTop);
+    return this.generateRandom(limitLeft, limitTop, moveBy);
   }
 }

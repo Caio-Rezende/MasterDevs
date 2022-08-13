@@ -1,15 +1,15 @@
 import { InputListener, Move2D } from "../controllers";
 import {
-  CollidableCircleNode,
+  CollidableCircleNode as CollideCircleNode,
   BoxNode,
   Position,
-  AbsctractNode,
+  AbstractNode,
 } from "../models";
 import { Dimension } from "../models/dimension";
 import { collided } from "../utlis";
 
 export class CheckCollideWithShadow extends InputListener {
-  element: CollidableCircleNode;
+  collideElement: CollideCircleNode;
   shadowElements: BoxNode[] = [];
 
   constructor(
@@ -17,7 +17,7 @@ export class CheckCollideWithShadow extends InputListener {
     shadowElements: NodeListOf<HTMLElement>
   ) {
     super();
-    this.element = new CollidableCircleNode(domElement);
+    this.collideElement = new CollideCircleNode(domElement);
     shadowElements.forEach((domNode) =>
       this.shadowElements.push(new BoxNode(domNode))
     );
@@ -25,14 +25,14 @@ export class CheckCollideWithShadow extends InputListener {
 
   doMotion(moveBy: Move2D): void {
     const collided = this.checkIfCollided();
-    if (collided && !this.element.haveCollided) {
-      this.element.haveCollided = true;
-      this.element.whenCollideStartFn();
-    } else if (!collided && this.element.haveCollided) {
-      this.element.haveCollided = false;
-      this.element.whenCollideStopFn();
+    if (collided && !this.collideElement.haveCollided) {
+      this.collideElement.haveCollided = true;
+      this.collideElement.whenCollideStartFn();
+    } else if (!collided && this.collideElement.haveCollided) {
+      this.collideElement.haveCollided = false;
+      this.collideElement.whenCollideStopFn();
     }
-  };
+  }
 
   checkIfCollided(): boolean {
     let haveCollided = false;
@@ -46,7 +46,12 @@ export class CheckCollideWithShadow extends InputListener {
         const y = Number(shadowAt[2]);
         const blur = Number(shadowAt[3]);
 
-        const abstractNode = new AbsctractNode(
+        const collideAbstractElement = new AbstractNode(
+          this.collideElement.domNode,
+          this.collideElement.position,
+          this.collideElement.dimension
+        );
+        const abstractNode = new AbstractNode(
           node.domNode,
           new Position({
             x: node.posX + x,
@@ -57,8 +62,8 @@ export class CheckCollideWithShadow extends InputListener {
             height: node.height + blur,
           })
         );
-
-        haveCollided = haveCollided || collided(this.element, abstractNode);
+        haveCollided =
+          haveCollided || collided(collideAbstractElement, abstractNode);
       }
     });
 

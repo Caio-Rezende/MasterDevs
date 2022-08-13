@@ -16,21 +16,24 @@ window.onload = () => {
     throw new Error("EntitiesNotFound");
   }
 
-  new RandomPlacement(hiddenElement, shadowElements);
+  new RandomPlacement(
+    hiddenElement,
+    shadowElements
+  );
 
   const collider = new CheckCollideWithShadow(hiddenElement, shadowElements);
-  if (collider.element) {
-    collider.element.whenCollideStartFn = () => {
-      collider.element.style.backgroundColor = "white";
+  if (collider.collideElement) {
+    collider.collideElement.whenCollideStartFn = () => {
+      collider.collideElement.style.backgroundColor = "white";
     };
-    collider.element.whenCollideStopFn = () => {
-      collider.element.style.backgroundColor = "transparent";
+    collider.collideElement.whenCollideStopFn = () => {
+      collider.collideElement.style.backgroundColor = "transparent";
     };
   }
   const applyShadow = new ApplyShadow(shadowElements);
 
   const inputController = new InputController();
-  
+
   inputController.addKeyListener(new MoveInScreenListener(hiddenElement));
   inputController.addKeyListener(collider);
 

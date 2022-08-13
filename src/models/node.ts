@@ -1,12 +1,24 @@
-export class Node {
+import { Dimension } from "./dimension";
+import { Position } from "./position";
+
+export abstract class Node {
   domNode: HTMLElement;
   style: CSSStyleDeclaration;
-  
+
+  abstract get dimension(): Dimension;
+
   get posX() {
-    return Math.floor(this.domNode.offsetWidth / 2 + this.domNode.offsetLeft);
+    return this.domNode.offsetLeft;
   }
   get posY() {
-    return Math.floor(this.domNode.offsetHeight / 2 + this.domNode.offsetTop);
+    return this.domNode.offsetTop;
+  }
+
+  get position(): Position {
+    return new Position({
+      x: this.posX,
+      y: this.posY,
+    });
   }
 
   constructor(node: HTMLElement) {
