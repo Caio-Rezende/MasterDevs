@@ -5,6 +5,7 @@ This project was made to sample programming skills I possess.
 ## HOW WORKS
 
 ### Command Line
+
 $ npm install
 <br/>
 $ npm run dev
@@ -12,6 +13,7 @@ $ npm run dev
 -> Browse to localhost:9000
 
 ### VSCode
+
 Hit F5, it should start the "webapack: serve dev" task and open the browser.
 
 ## AT DISPLAY
@@ -29,3 +31,5 @@ Input Controller (KeyEvents)
 Collision Detection (Mouse Events + Key Events)
 <br/>
 Shadow Movement (CSS + Mouse Events)
+<br/>
+github integration to on push fire deploy to a firebase project
