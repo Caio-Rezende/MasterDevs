@@ -4,9 +4,14 @@ import {
   RandomPlacement,
 } from "./effects";
 import { hiddenNodeId, shadowNodesClass } from "./constants";
-import { InputController, MoveInScreenListener } from "./controllers";
+import {
+  InputController,
+  MoveInScreenListener,
+  NavController,
+} from "./controllers";
 
 window.onload = () => {
+  const navElement = document.querySelector("nav span div");
   const hiddenElement = document.getElementById(hiddenNodeId);
   const shadowElements = document.querySelectorAll<HTMLElement>(
     `.${shadowNodesClass}`
@@ -16,10 +21,7 @@ window.onload = () => {
     throw new Error("EntitiesNotFound");
   }
 
-  new RandomPlacement(
-    hiddenElement,
-    shadowElements
-  );
+  new RandomPlacement(hiddenElement, shadowElements);
 
   const collider = new CheckCollideWithShadow(hiddenElement, shadowElements);
   if (collider.collideElement) {
@@ -39,4 +41,6 @@ window.onload = () => {
 
   inputController.addMouseListener(applyShadow);
   inputController.addMouseListener(collider);
+
+  const navController = new NavController(navElement!);
 };
