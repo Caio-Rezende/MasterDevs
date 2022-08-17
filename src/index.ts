@@ -11,7 +11,7 @@ import {
 } from "./controllers";
 
 window.onload = () => {
-  const navElement = document.querySelector("nav span div");
+  const navElements = document.querySelectorAll("nav a");
   const hiddenElement = document.getElementById(hiddenNodeId);
   const shadowElements = document.querySelectorAll<HTMLElement>(
     `.${shadowNodesClass}`
@@ -42,5 +42,5 @@ window.onload = () => {
   inputController.addMouseListener(applyShadow);
   inputController.addMouseListener(collider);
 
-  const navController = new NavController(navElement!);
+  const navController = new NavController(navElements!);
 };
