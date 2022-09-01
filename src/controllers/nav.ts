@@ -1,8 +1,5 @@
 export class NavController {
-  navElements: NodeListOf<Element>;
-
-  constructor(navElements: NodeListOf<Element>) {
-    this.navElements = navElements;
+  constructor(public navElements: NodeListOf<Element>) {
     window.addEventListener("hashchange", this.updateNavbar.bind(this));
 
     window.addEventListener("unload", this.dispose);
@@ -16,13 +13,13 @@ export class NavController {
 
   updateNavbar() {
     const hash = location.hash;
-    for (let index in this.navElements) {
-      let element = this.navElements[index] as HTMLAnchorElement;
-      if (element.href.includes(hash)) {
-        element.className += " hidden";
+    this.navElements.forEach((element) => {
+      let anchor = element as HTMLAnchorElement;
+      if (anchor.href.includes(hash)) {
+        anchor.className += " hidden";
       } else {
-        element.className = element.className.replace(" hidden", "");
+        anchor.className = anchor.className.replace(" hidden", "");
       }
-    }
+    });
   }
 }

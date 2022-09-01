@@ -1,11 +1,8 @@
 import { InputListener, Move2D } from "./input";
 
 export class MoveInScreenListener extends InputListener {
-  element: HTMLElement;
-
-  constructor(element: HTMLElement) {
+  constructor(public element: HTMLElement) {
     super();
-    this.element = element;
   }
 
   doMotion(moveBy: Move2D) {

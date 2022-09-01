@@ -3,15 +3,18 @@ import {
   CheckCollideWithShadow,
   RandomPlacement,
 } from "./effects";
-import { hiddenNodeId, shadowNodesClass } from "./constants";
+import { blogRootId, hiddenNodeId, shadowNodesClass } from "./constants";
 import {
   InputController,
   MoveInScreenListener,
   NavController,
 } from "./controllers";
+import { BlogController } from "./controllers/blog";
+import blog from "./feed/blog.json";
 
 window.onload = () => {
   const navElements = document.querySelectorAll("nav a");
+  const blogRoot = document.getElementById(blogRootId);
   const hiddenElement = document.getElementById(hiddenNodeId);
   const shadowElements = document.querySelectorAll<HTMLElement>(
     `.${shadowNodesClass}`
@@ -42,5 +45,7 @@ window.onload = () => {
   inputController.addMouseListener(applyShadow);
   inputController.addMouseListener(collider);
 
-  const navController = new NavController(navElements!);
+  new NavController(navElements!);
+
+  new BlogController(blog.entries, blogRoot!);
 };

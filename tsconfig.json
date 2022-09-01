@@ -2,12 +2,13 @@
   "extends": "@tsconfig/node16/tsconfig.json",
 
   "compilerOptions": {
-    "lib": ["DOM", "ES2021"], 
+    "lib": ["DOM", "ES2021"],
     "outDir": "./dist/",
     "noImplicitAny": true,
     "jsx": "react",
     "allowJs": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "resolveJsonModule": true
   },
 
   "include": ["src", "./css.d.ts"]

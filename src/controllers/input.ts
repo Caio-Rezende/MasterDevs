@@ -3,13 +3,7 @@ export abstract class InputListener {
 }
 
 export class Move2D {
-  x: number;
-  y: number;
-
-  constructor(x: number, y: number) {
-    this.x = x;
-    this.y = y;
-  }
+  constructor(public x: number, public y: number) {}
 }
 
 const DEFAULT_MULTIPLIER = 5;

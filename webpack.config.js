@@ -48,7 +48,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js", ".css"],
+    extensions: [".tsx", ".ts", ".js", ".json", ".css"],
   },
   plugins: [
     new Dotenv(),

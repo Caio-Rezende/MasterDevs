@@ -2,7 +2,6 @@ import { Dimension } from "./dimension";
 import { Position } from "./position";
 
 export abstract class Node {
-  domNode: HTMLElement;
   style: CSSStyleDeclaration;
 
   abstract get dimension(): Dimension;
@@ -21,8 +20,7 @@ export abstract class Node {
     });
   }
 
-  constructor(node: HTMLElement) {
-    this.domNode = node;
-    this.style = node.style;
+  constructor(public domNode: HTMLElement) {
+    this.style = domNode.style;
   }
 }

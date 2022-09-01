@@ -1,0 +1,38 @@
+{
+  "entries": [
+    {
+      "title": "Starting a blog",
+      "date": "2022-08-31",
+      "text": [
+        "First of all, I'm pretty grateful for my journey and the whereabouts of this road I trailed.",
+        "I started very young at the age of 14yo and now, in 2022, I am 33, almost 20 years past the first professional contact I had.",
+        "My passion for computer's in general, started yet before, when I got my first computer, at the age of 11yo.",
+        "I remember attending a local center to study the basics of MS, Office, Adobe...",
+        "So, it was just natural for me, when I reached my grandfather and told him I wanted to work and he connected me.",
+        "I started as an intern, studying an HTML bible. Good times.",
+        "I was introduced to CSS and JS next. Then ASP.NET.",
+        "After that I made by myself a project of a CD containing a child's book, with frames and framesets. It had links targeting one another and the customer would navigate through the chapters in a menu to the left and the title would be displayed in the top.",
+        "Then, I stopped for 1 year to study for admission in the bachelor's course. I attended UnB (University of Brasília - Brazil).",
+        "5 long years full of experiences, internships, including abroad. More good times.",
+        "Many great minds helped shape my own at the time.",
+        "During this time, I was back in touch with the cousin and continued my web programming journey.",
+        "At the time I had to work with ASP.NET but mainly PHP.",
+        "I got to work with great people and in many projects.",
+        "MySQL, Postgres, (linux|mac|windows), apache, (l|w|m)amp, xdebug, ldap, rpc, xml, auth.",
+        "It reminded me an episode, funny story, I was assigned a task to do a login page, and store the user session. It took me more than 1 week to complete. And after that I was the login guy. Never in the history of the company a login was so complete through and through.",
+        "So, after graduation, bachelor degree at hand I was assigned my first big challenge.",
+        "Make a PHP Framework for CMS and BPMS that could be integrated to other softwares and customized at any level.",
+        "The challenges made me go to the extreme, learning and studying more in the way to propose solutions to my peers and get the system's core to work.",
+        "My technically and social skills were tested.",
+        "We came up with a MVC with mapper's to the db, model classes that would attach to the mapper and provide all basic features (CRUD), and controllers that would extend business rules or consume then and invoke the classes and mappers to do the whole request/response cycle.",
+        "Many years at it.",
+        "The front had mostly js/jQuery to it's logic and at some points angular.",
+        "We had a drawer with svg elements for the BPM design.",
+        "Quite the project it was. Made me very proud to see it go live and running in the clients.",
+        "At some point I started my master's degree in computer science.",
+        "I studied BMP process discovery algorithms and proposed a framework to evaluate their relevance.",
+        "Well, I am done with the writing for now, so, thanks a lot to finding me and let's be in touch."
+      ]
+    }
+  ]
+}

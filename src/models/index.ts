@@ -1,3 +1,4 @@
+export * from './blog'
 export * from './boxNode'
 export * from './circleNode'
 export * from './collidable'

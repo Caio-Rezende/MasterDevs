@@ -19,6 +19,11 @@
         >playground</a
       >
       <a
+        href="#blog"
+        class="p-3 border border-dashed hover:border-solid border-yellow-400 text-center invisible group-hover:visible"
+        >blog</a
+      >
+      <a
         href="#version"
         class="p-3 border border-dashed hover:border-solid border-yellow-400 text-center invisible group-hover:visible"
         >version</a
@@ -74,6 +79,17 @@
           title="reach out through email"
           >caio@masterdevs.inf.br</a
         >.
+        <br />
+        <br />
+        <br />
+        <a
+          href="https://calendly.com/caio-masterdev/reach-out"
+          class="border-b border-dotted hover:border-solid"
+          title="reach out to meet at calendly"
+          target="_blank"
+          >Reach out to meet me at this calendly link and schedule an
+          appointment.</a
+        >
       </h2>
     </div>
     <a id="playground"></a>
@@ -90,6 +106,22 @@
         Found me!
       </div>
     </div>
+    <a id="blog"></a>
+    <div
+      class="h-screen w-screen flex flex-col justify-center items-center text-yellow-600 z-0 relative"
+    >
+      <h1 class="text-2xl md:text-4xl xl:text-6xl font-bold">Blog</h1>
+      <div
+        class="mt-8 w-4/5 max-h-[80vh] border-yellow-200 border overflow-auto"
+        id="blogEntries"
+      >
+        <div class="p-4 xl:p-8 my-6 xl:my-10 hidden">
+          <span class="float-right italic">01/01/2000</span>
+          <h2 class="text-lg font-bold uppercase mb-4 xl:mb-8">test</h2>
+          <p class="m-1 xl:m-2 text-lg">lorem ipsum</p>
+        </div>
+      </div>
+    </div>
     <a id="version"></a>
     <div
       class="h-screen w-screen flex flex-col justify-center items-center text-yellow-600 z-0 relative"
@@ -104,6 +136,7 @@
         Collision Detection (Mouse Events + Key Events)
         Shadow Movement (CSS + Mouse Events)
         Github integration to on push fire deploy to a firebase project
+        Blog with old js cloning method from json
       </pre>
     </div>
   </body>
