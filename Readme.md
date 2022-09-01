@@ -14,7 +14,7 @@ $ npm run dev
 
 ### VSCode
 
-Hit F5, it should start the "webapack: serve dev" task and open the browser.
+Hit F5, it should start the "webpack: serve dev" task and open the browser.
 
 ## AT DISPLAY
 
@@ -33,3 +33,5 @@ Collision Detection (Mouse Events + Key Events)
 Shadow Movement (CSS + Mouse Events)
 <br/>
 github integration to on push fire deploy to a firebase project
+<br/>
+Blog with old js cloning method from json (using template, details, summary)

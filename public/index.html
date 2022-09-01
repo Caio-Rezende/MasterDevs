@@ -112,14 +112,19 @@
     >
       <h1 class="text-2xl md:text-4xl xl:text-6xl font-bold">Blog</h1>
       <div
-        class="mt-8 w-4/5 max-h-[80vh] border-yellow-200 border overflow-auto"
+        class="mt-8 w-4/5 max-h-[60vh] border-yellow-200 border overflow-auto scrollbar-thin"
         id="blogEntries"
       >
-        <div class="p-4 xl:p-8 my-6 xl:my-10 hidden">
-          <span class="float-right italic">01/01/2000</span>
-          <h2 class="text-lg font-bold uppercase mb-4 xl:mb-8">test</h2>
-          <p class="m-1 xl:m-2 text-lg">lorem ipsum</p>
-        </div>
+        <template>
+          <div class="p-4 xl:p-8 my-6 xl:my-10">
+            <span class="float-right italic">01/01/2000</span>
+            <h2 class="text-lg font-bold uppercase mb-4 xl:mb-8">test</h2>
+            <details class="max-h-96 overflow-auto scrollbar-thumb-white scrollbar-thin">
+              <summary></summary>
+              <p class="m-1 xl:m-2 text-lg">lorem ipsum</p>
+            </details>
+          </div>
+        </template>
       </div>
     </div>
     <a id="version"></a>
@@ -136,7 +141,7 @@
         Collision Detection (Mouse Events + Key Events)
         Shadow Movement (CSS + Mouse Events)
         Github integration to on push fire deploy to a firebase project
-        Blog with old js cloning method from json
+        Blog with old js cloning method from json (using template, details, summary)
       </pre>
     </div>
   </body>

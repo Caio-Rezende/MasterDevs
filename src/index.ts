@@ -10,7 +10,7 @@ import {
   NavController,
 } from "./controllers";
 import { BlogController } from "./controllers/blog";
-import blog from "./feed/blog.json";
+import blog from "./feeds/blog.json";
 
 window.onload = () => {
   const navElements = document.querySelectorAll("nav a");
