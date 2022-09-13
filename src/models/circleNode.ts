@@ -1,6 +1,5 @@
 import { Dimension } from "./dimension";
 import { Node } from "./node";
-import { Position } from "./position";
 
 export class CircleNode extends Node {
   get dimension(): Dimension {

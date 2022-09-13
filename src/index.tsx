@@ -1,3 +1,7 @@
+import { createRoot } from "react-dom/client";
+
+import { NavView } from "./views";
+
 import {
   ApplyShadow,
   CheckCollideWithShadow,
@@ -7,13 +11,11 @@ import { blogRootId, hiddenNodeId, shadowNodesClass } from "./constants";
 import {
   InputController,
   MoveInScreenListener,
-  NavController,
 } from "./controllers";
 import { BlogController } from "./controllers/blog";
 import blog from "./feeds/blog.json";
 
 window.onload = () => {
-  const navElements = document.querySelectorAll("nav a");
   const blogRoot = document.getElementById(blogRootId);
   const hiddenElement = document.getElementById(hiddenNodeId);
   const shadowElements = document.querySelectorAll<HTMLElement>(
@@ -45,7 +47,10 @@ window.onload = () => {
   inputController.addMouseListener(applyShadow);
   inputController.addMouseListener(collider);
 
-  new NavController(navElements!);
-
   new BlogController(blog.entries, blogRoot!);
+  
+  const container = document.getElementById("navView");
+  const root = createRoot(container!); // createRoot(container!) if you use TypeScript
+  root.render(<NavView />);
 };
+

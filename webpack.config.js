@@ -1,9 +1,10 @@
 const path = require("path");
 const Dotenv = require("dotenv-webpack");
 const CopyPlugin = require("copy-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = {
-  entry: ["./src/main.css", "./src/index.ts"],
+  entry: ["./src/main.css", "./src/index.tsx"],
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
@@ -12,7 +13,7 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: "ts-loader",
+        use: ["babel-loader", "ts-loader"],
         exclude: /node_modules/,
       },
       {
@@ -51,6 +52,7 @@ module.exports = {
     extensions: [".tsx", ".ts", ".js", ".json", ".css"],
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new Dotenv(),
     new CopyPlugin({
       patterns: [{ from: "public", to: "" }],
