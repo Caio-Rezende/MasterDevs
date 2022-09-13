@@ -16,9 +16,11 @@ export class NavController {
     this.navElements.forEach((element) => {
       let anchor = element as HTMLAnchorElement;
       if (anchor.href.includes(hash)) {
-        anchor.className += " hidden";
-      } else {
         anchor.className = anchor.className.replace(" hidden", "");
+      } else {
+        if (!anchor.className.includes(" hidden")) {
+          anchor.className += " hidden";
+        }
       }
     });
   }

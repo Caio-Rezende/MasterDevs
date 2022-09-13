@@ -6,34 +6,37 @@
   </head>
   <body class="bg-black font-serif overflow-hidden text-base w-screen h-screen">
     <nav
-      class="text-yellow-600 fixed right-0 top-0 xl:top-auto xl:bottom-0 p-4 z-10 grid grid-cols-6 hover:grid-cols-5 xl:hover:grid-cols-1 xl:grid-cols-1 gap-4 text-3xl xl:text-2xl group"
+      class="text-yellow-600 fixed left-0 top-0 xl:top-auto xl:right-0 xl:left-auto xl:bottom-0 p-4 z-10 grid grid-cols-2 xl:grid-cols-1 hover:grid-cols-2 sm:hover:grid-cols-5 xl:hover:grid-cols-1 gap-4 text-xl xl:text-2xl group"
     >
+      <span class="p-3 group-hover:hidden text-center xl:hidden bg-black">menu</span>
       <a
         href="#intro"
-        class="p-3 border border-dashed hover:border-solid border-yellow-400 text-center invisible group-hover:visible"
+        class="p-3 border border-dashed hover:border-solid border-yellow-400 text-center hidden group-hover:block bg-black"
         >intro</a
       >
       <a
         href="#playground"
-        class="p-3 border border-dashed hover:border-solid border-yellow-400 text-center invisible group-hover:visible"
+        class="p-3 border border-dashed hover:border-solid border-yellow-400 text-center hidden group-hover:block bg-black"
         >playground</a
       >
       <a
         href="#blog"
-        class="p-3 border border-dashed hover:border-solid border-yellow-400 text-center invisible group-hover:visible"
+        class="p-3 border border-dashed hover:border-solid border-yellow-400 text-center hidden group-hover:block bg-black"
         >blog</a
       >
       <a
         href="#version"
-        class="p-3 border border-dashed hover:border-solid border-yellow-400 text-center invisible group-hover:visible"
+        class="p-3 border border-dashed hover:border-solid border-yellow-400 text-center hidden group-hover:block bg-black"
         >version</a
       >
       <a
         href="#home"
-        class="p-3 border border-dashed hover:border-solid border-yellow-400 text-center invisible group-hover:visible"
+        class="p-3 border border-dashed hover:border-solid border-yellow-400 text-center hidden group-hover:block bg-black"
         >home</a
       >
-      <span class="p-3 group-hover:hidden text-center">menu</span>
+      <span class="p-3 hidden xl:block group-hover:hidden text-center bg-black"
+        >menu</span
+      >
     </nav>
     <a id="home"></a>
     <div
@@ -55,42 +58,36 @@
         <br />
         head of the Master <abbr title="Developers">Devs</abbr>.
       </h1>
-      <h2 class="text-xl md:text-2xl xl:text-3xl">
+      <p class="text-xl md:text-2xl xl:text-3xl mb-5">
         For now, this is just a sample of <br />
         what's published in the github at
         <a
           href="https://github.com/Caio-Rezende/MasterDevs"
           target="_blank"
-          class="border-b border-dotted hover:border-solid"
           title="go to github page"
           >Caio-Rezende/MasterDevs</a
         >.
-        <br />
-        <br />
+      </p>
+      <p class="text-xl md:text-2xl xl:text-3xl mb-5">
         The goal is to showcase some code samples,
         <br />
         do some playground and have at hand a portfolio.
-        <br />
-        <br />
+      </p>
+      <p class="text-xl md:text-2xl xl:text-3xl mb-5">
         If you want to reach out, just send an email to
-        <a
-          href="mailto:caio@masterdevs.inf.br"
-          class="border-b border-dotted hover:border-solid"
-          title="reach out through email"
+        <a href="mailto:caio@masterdevs.inf.br" title="reach out through email"
           >caio@masterdevs.inf.br</a
         >.
-        <br />
-        <br />
-        <br />
+      </p>
+      <p class="text-xl md:text-2xl xl:text-3xl w-full">
         <a
           href="https://calendly.com/caio-masterdev/reach-out"
-          class="border-b border-dotted hover:border-solid"
           title="reach out to meet at calendly"
           target="_blank"
           >Reach out to meet me at this calendly link and schedule an
           appointment.</a
         >
-      </h2>
+      </p>
     </div>
     <a id="playground"></a>
     <div
@@ -119,7 +116,9 @@
           <div class="p-4 xl:p-8 my-6 xl:my-10">
             <span class="float-right italic">01/01/2000</span>
             <h2 class="text-lg font-bold uppercase mb-4 xl:mb-8">test</h2>
-            <details class="max-h-96 overflow-auto scrollbar-thumb-white scrollbar-thin">
+            <details
+              class="max-h-96 overflow-auto scrollbar-thumb-white scrollbar-thin"
+            >
               <summary></summary>
               <p class="m-1 xl:m-2 text-lg">lorem ipsum</p>
             </details>

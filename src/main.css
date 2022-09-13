@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*[title] {
+  text-decoration: none;
+}
+*[title]:after {
+  font-size: 0.7em;
+  content: " <" attr(title) ">";
+}
+
+@media screen and (min-width: 1280px) {
+  *[title] {
+    cursor: help;
+    text-decoration: underline dotted;
+  }
+  *[title]:after {
+    content: "";
+  }
+}
