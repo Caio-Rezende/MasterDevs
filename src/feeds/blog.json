@@ -1,6 +1,19 @@
 {
   "entries": [
     {
+      "title": "Good Morning",
+      "date": "2022-09-14",
+      "text": [
+        "Hello there, my fella!",
+        "Today is somewhat different for me, as I am thinking some changes to be made.",
+        "So far in life I have followed others and maybe it's getting closer to a time for shaking things a bit.",
+        "What is making me think about this, are the many cases of job opportunities out there and so many unemployed people.",
+        "I have a lot to contribute and I see myself as open hearted, so it is a good thing to open the possibility to help others.",
+        "I still haven't sorted all out, but I believe to be close to it.",
+        "Maybe soon I will post something here about that."
+      ]
+    },
+    {
       "title": "Starting a blog",
       "date": "2022-08-31",
       "text": [
@@ -21,16 +34,16 @@
         "MySQL, Postgres, (linux|mac|windows), apache, (l|w|m)amp, xdebug, ldap, rpc, xml, auth.",
         "It reminded me an episode, funny story, I was assigned a task to do a login page, and store the user session. It took me more than 1 week to complete. And after that I was the login guy. Never in the history of the company a login was so complete through and through.",
         "So, after graduation, bachelor degree at hand I was assigned my first big challenge.",
-        "Make a PHP Framework for CMS and BPMS that could be integrated to other softwares and customized at any level.",
+        "Make a PHP Framework for CMS and BPMS (Business Process Management System) that could be integrated to other softwares and customized at any level.",
         "The challenges made me go to the extreme, learning and studying more in the way to propose solutions to my peers and get the system's core to work.",
         "My technically and social skills were tested.",
         "We came up with a MVC with mapper's to the db, model classes that would attach to the mapper and provide all basic features (CRUD), and controllers that would extend business rules or consume then and invoke the classes and mappers to do the whole request/response cycle.",
         "Many years at it.",
-        "The front had mostly js/jQuery to it's logic and at some points angular.",
-        "We had a drawer with svg elements for the BPM design.",
+        "The front had mostly js/jQuery to it's logic and at some point angular.",
+        "We had a black board with svg elements for the BPM design.",
         "Quite the project it was. Made me very proud to see it go live and running in the clients.",
         "At some point I started my master's degree in computer science.",
-        "I studied BMP process discovery algorithms and proposed a framework to evaluate their relevance.",
+        "I studied BPM process discovery algorithms and proposed a framework to evaluate their relevance.",
         "Well, I am done with the writing for now, so, thanks a lot to finding me and let's be in touch."
       ]
     }
