@@ -16,6 +16,9 @@ module.exports = {
           "100%": { textShadow: "0px 0px 0px white" },
         },
       },
+      fontFamily: {
+        handwrite: "Berkshire Swash",
+      },
     },
   },
   plugins: [require("tailwind-scrollbar")],

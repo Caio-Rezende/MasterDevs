@@ -15,7 +15,7 @@ export class NavController {
     const hash = location.hash;
     this.navElements.forEach((element) => {
       let anchor = element as HTMLAnchorElement;
-      if (anchor.href.includes(hash)) {
+      if (hash && anchor.href.includes(hash)) {
         anchor.className = anchor.className.replace(" hidden", "");
       } else {
         if (!anchor.className.includes(" hidden")) {
