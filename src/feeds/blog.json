@@ -1,6 +1,17 @@
 {
   "entries": [
     {
+      "title": "Roadmap",
+      "date": "2022-09-19",
+      "text": [
+        "I have decided to add a Roadmap and submit to a straight line of work I would like to do here.",
+        "First of all, I would like to add more React, move my original HTML/CSS repetitive code to React, and use a proper router.",
+        "Then, I will start some db and back end service to add a live chat with 100 messages spam. No filter for now.",
+        "Then, I could add more CSS effects and change the overall look of the site, I am thinking of some parallax and generated background.",
+        "After that, I would like to work with some web3 and webGL stuff, more into it when I get there."
+      ]
+    },
+    {
       "title": "Good Morning",
       "date": "2022-09-14",
       "text": [
