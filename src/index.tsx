@@ -7,16 +7,21 @@ import {
   CheckCollideWithShadow,
   RandomPlacement,
 } from "./effects";
-import { blogRootId, hiddenNodeId, shadowNodesClass } from "./constants";
 import {
-  InputController,
-  MoveInScreenListener,
-} from "./controllers";
+  blogRootId,
+  changelogRootId,
+  hiddenNodeId,
+  shadowNodesClass,
+} from "./constants";
+import { InputController, MoveInScreenListener } from "./controllers";
 import { BlogController } from "./controllers/blog";
 import blog from "./feeds/blog.json";
+import changelog from "./feeds/changelog.json";
+import { ChangelogController } from "./controllers/changelog";
 
 window.onload = () => {
   const blogRoot = document.getElementById(blogRootId);
+  const changelogRoot = document.getElementById(changelogRootId);
   const hiddenElement = document.getElementById(hiddenNodeId);
   const shadowElements = document.querySelectorAll<HTMLElement>(
     `.${shadowNodesClass}`
@@ -48,9 +53,10 @@ window.onload = () => {
   inputController.addMouseListener(collider);
 
   new BlogController(blog.entries, blogRoot!);
-  
+
+  new ChangelogController(changelog.entries, changelogRoot!);
+
   const container = document.getElementById("navView");
   const root = createRoot(container!); // createRoot(container!) if you use TypeScript
   root.render(<NavView />);
 };
-
