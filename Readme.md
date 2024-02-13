@@ -35,3 +35,5 @@ Shadow Movement (CSS + Mouse Events)
 github integration to on push fire deploy to a firebase project
 <br/>
 Blog with old js cloning method from json (using template, details, summary)
+<br />
+React (TypeScript) for elements in the menu

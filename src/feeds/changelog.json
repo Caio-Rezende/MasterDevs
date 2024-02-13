@@ -1,14 +1,15 @@
 {
-    "entries": [
-        "TypeScript (classes + types + getters)",
-        "Webpack (with Dev Server)",
-        "Math Collision (BOX + Circle)",
-        "CSS with Tailwind (PostCSS + Positioning + Color)",
-        "Input Controller (KeyEvents)",
-        "Collision Detection (Mouse Events + Key Events)",
-        "Shadow Movement (CSS + Mouse Events)",
-        "Github integration to on push fire deploy to a firebase project",
-        "Blog with old js cloning method (using template, details, summary)",
-        "JSON feed entries for blog and changelog (version) "
-    ]
+  "entries": [
+    "TypeScript (classes + types + getters)",
+    "Webpack (with Dev Server)",
+    "Math Collision (BOX + Circle)",
+    "CSS with Tailwind (PostCSS + Positioning + Color)",
+    "Input Controller (KeyEvents)",
+    "Collision Detection (Mouse Events + Key Events)",
+    "Shadow Movement (CSS + Mouse Events)",
+    "Github integration to on push fire deploy to a firebase project",
+    "Blog with old js cloning method (using template, details, summary)",
+    "JSON feed entries for blog and changelog (version)",
+    "React (TypeScript) for elements in the menu"
+  ]
 }
