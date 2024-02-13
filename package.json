@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "build": "webpack --mode=production",
-    "dev": "webpack serve --mode=development --config webpack.dev.js --hot",
+    "dev": "webpack serve --mode=development --config webpack.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

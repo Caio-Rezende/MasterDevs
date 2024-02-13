@@ -35,8 +35,7 @@ export class CheckCollideWithShadow extends InputListener {
   }
 
   checkIfCollided(): boolean {
-    let haveCollided = false;
-    this.shadowElements.forEach((node) => {
+    return this.shadowElements.some((node) => {
       const shadowAt = /(-{0,1}[0-9]+)px (-{0,1}[0-9]+)px ([0-9]+)px/.exec(
         node.style.textShadow
       );
@@ -62,11 +61,8 @@ export class CheckCollideWithShadow extends InputListener {
             height: node.height + blur,
           })
         );
-        haveCollided =
-          haveCollided || collided(collideAbstractElement, abstractNode);
+        return collided(collideAbstractElement, abstractNode);
       }
     });
-
-    return haveCollided;
   }
 }
