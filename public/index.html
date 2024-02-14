@@ -2,6 +2,10 @@
 <html lang="pt-br">
   <head>
     <title>MasterDevs</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
     <script src="main.js" type="text/javascript"></script>
   </head>
   <body class="bg-black overflow-hidden text-base w-screen h-screen">
@@ -22,55 +26,59 @@
     </div>
     <a id="intro"></a>
     <div
-      class="h-screen w-screen flex flex-col justify-center items-center text-yellow-600 z-0 relative text-center"
+      class="h-screen w-screen flex flex-col justify-center items-center text-yellow-600 z-0 relative text-center pt-28"
     >
-      <h1 class="text-2xl md:text-4xl xl:text-6xl mb-20">
-        Nice to meet you,
-        <br />
-        my name is <b title="pronounce like kyle">Caio</b>
-        <br />
-        head of the
-        <font class="font-handwrite"
-          >Master <abbr title="Developers">Devs</abbr></font
-        >.
-      </h1>
-      <p class="text-xl md:text-2xl xl:text-3xl mb-10">
-        For now, this is just a sample of <br />
-        what's published in the github at
-        <a
-          href="https://github.com/Caio-Rezende/MasterDevs"
-          target="_blank"
-          title="go to github page"
-          >Caio-Rezende/MasterDevs</a
-        >.
-      </p>
-      <p class="text-xl md:text-2xl xl:text-3xl mb-10">
-        The goal is to showcase some code samples,
-        <br />
-        do some playground and have at hand a portfolio.
-      </p>
-      <p class="text-xl md:text-2xl xl:text-3xl mb-10">
-        If you want to reach out, just send an email to
-        <a href="mailto:caio@masterdevs.inf.br" title="reach out through email"
-          >caio@masterdevs.inf.br</a
-        >.
-      </p>
-      <p class="text-xl md:text-2xl xl:text-3xl w-full">
-        <a
-          href="https://calendly.com/caio-masterdev/reach-out"
-          title="reach out to meet at calendly"
-          target="_blank"
-          >Reach out to meet me at this calendly link and schedule an
-          appointment.</a
-        >
-      </p>
+      <div class="px-3 pb-10 w-full h-full scroll-auto overflow-auto">
+        <h1 class="text-2xl md:text-4xl xl:text-6xl mb-20">
+          Nice to meet you,
+          <br />
+          my name is <b title="pronounce like kyle">Caio</b>
+          <br />
+          head of the
+          <font class="font-handwrite"
+            >Master <abbr title="Developers">Devs</abbr></font
+          >.
+        </h1>
+        <p class="text-xl md:text-2xl xl:text-3xl mb-10">
+          For now, this is just a sample of <br />
+          what's published in the github at
+          <a
+            href="https://github.com/Caio-Rezende/MasterDevs"
+            target="_blank"
+            title="go to github page"
+            >Caio-Rezende/MasterDevs</a
+          >.
+        </p>
+        <p class="text-xl md:text-2xl xl:text-3xl mb-10">
+          The goal is to showcase some code samples,
+          <br />
+          do some playground and have at hand a portfolio.
+        </p>
+        <p class="text-xl md:text-2xl xl:text-3xl mb-10">
+          If you want to reach out, just send an email to
+          <a
+            href="mailto:caio@masterdevs.inf.br"
+            title="reach out through email"
+            >caio@masterdevs.inf.br</a
+          >.
+        </p>
+        <p class="text-xl md:text-2xl xl:text-3xl w-full">
+          <a
+            href="https://calendly.com/caio-masterdev/reach-out"
+            title="reach out to meet at calendly"
+            target="_blank"
+            >Reach out to meet me at this calendly link and schedule an
+            appointment.</a
+          >
+        </p>
+      </div>
     </div>
     <a id="playground"></a>
     <div
-      class="h-screen w-screen text-yellow-600 z-0 relative p-20 pt-28 flex flex-col justify-between"
+      class="h-screen w-screen text-yellow-600 z-0 relative pt-28 px-3 pb-10 flex flex-col justify-between"
     >
       <div
-        class="flex flex-col justify-center items-center absolute h-screen w-screen top-0 left-0 z-0"
+        class="flex flex-col justify-center items-center absolute h-screen w-screen top-0 left-0 z-0 overflow-hidden"
       >
         <h1
           class="text-6xl font-bold cursorApplyShadow border-red-50 bg-black rounded-full aspect-square p-0.5"
@@ -87,7 +95,9 @@
       <h1 class="text-2xl md:text-4xl xl:text-6xl font-bold z-10">
         Find the circle
       </h1>
-      <h1 class="text-sm md:text-base xl:text-xl font-bold z-10 hidden md:block">
+      <h1
+        class="text-sm md:text-base xl:text-xl font-bold z-10 hidden md:block"
+      >
         Move the cursor and use the 🔦's light
       </h1>
       <h1 class="text-sm md:text-base xl:text-xl font-bold z-10 md:hidden">
@@ -126,7 +136,10 @@
       class="h-screen w-screen flex flex-col justify-center items-center text-yellow-600 z-0 relative"
     >
       <h1 class="text-2xl md:text-4xl xl:text-6xl font-bold mb-10">Version</h1>
-      <pre id="changelogEntries"></pre>
+      <pre
+        id="changelogEntries"
+        class="w-full scroll-auto whitespace-pre-wrap p-3"
+      ></pre>
     </div>
   </body>
 </html>

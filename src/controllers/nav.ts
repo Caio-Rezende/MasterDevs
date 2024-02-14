@@ -1,4 +1,6 @@
 export class NavController {
+  hash: string = "";
+
   constructor(public navElements: NodeListOf<Element>) {
     window.addEventListener("hashchange", this.updateNavbar.bind(this));
 
@@ -12,10 +14,12 @@ export class NavController {
   }
 
   updateNavbar() {
-    const hash = location.hash;
+    if (Boolean(location.hash) && this.hash === location.hash) return;
+
+    this.hash = location.hash;
     this.navElements.forEach((element) => {
       let anchor = element as HTMLAnchorElement;
-      if (hash && anchor.href.includes(hash)) {
+      if (anchor.href.includes(this.hash)) {
         anchor.className = anchor.className.replace(" hidden", "");
       } else {
         if (!anchor.className.includes(" hidden")) {
