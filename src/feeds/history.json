@@ -1,0 +1,122 @@
+{
+  "entries": [
+    {
+      "company": "Interagi",
+      "startYear": "2005",
+      "endYear": "2006",
+      "level": "junior",
+      "role": "internship",
+      "techStack": ["html", "js", "css", "asp", "fireworks", "cvs", "flash"],
+      "text": []
+    },
+    {
+      "company": "INBD - Embedded Intelligence",
+      "startYear": "2008",
+      "endYear": "2009",
+      "level": "junior",
+      "role": "internship",
+      "techStack": ["java", "gwt", "css"],
+      "text": []
+    },
+    {
+      "company": "AIESEC",
+      "startYear": "2009",
+      "endYear": "2009",
+      "level": "",
+      "role": "salesman",
+      "techStack": ["management", "sales"],
+      "text": []
+    },
+    {
+      "company": "CJr",
+      "startYear": "2007",
+      "endYear": "2009",
+      "level": "",
+      "role": "director",
+      "techStack": ["management", "hr"],
+      "text": []
+    },
+    {
+      "company": "B-Media",
+      "startYear": "2009",
+      "endYear": "2010",
+      "level": "junior",
+      "role": "internship",
+      "techStack": ["english", "js", "php", "smarty templates", "mysql", "css"],
+      "text": []
+    },
+    {
+      "company": "Interagi",
+      "startYear": "2010",
+      "endYear": "2021",
+      "level": "staff",
+      "role": "fullstack",
+      "techStack": [
+        "js",
+        "php",
+        "postgresql",
+        "mssql",
+        "oracle",
+        "c#",
+        "astah",
+        "pentaho",
+        "svn",
+        "css3",
+        "react",
+        "angular",
+        "laravel",
+        "python",
+        "plone",
+        "wordpress",
+        "joomla",
+        "azure",
+        "owasp zap",
+        "apache httpd",
+        "modsec",
+        "ssl",
+        "profile",
+        "debug",
+        "phpunit"
+      ],
+      "text": []
+    },
+    {
+      "company": "LoopiPay",
+      "startYear": "2022",
+      "endYear": "current",
+      "level": "senior",
+      "role": "frontend",
+      "techStack": [
+        "typescript",
+        "css3",
+        "figma",
+        "git",
+        "gcp",
+        "firebase",
+        "redis",
+        "node",
+        "express",
+        "react",
+        "next",
+        "flutter"
+      ],
+      "text": []
+    },
+    {
+      "company": "CEIA",
+      "startYear": "2023",
+      "endYear": "current",
+      "level": "principal",
+      "role": "fullstack",
+      "techStack": [
+        "python",
+        "process mining",
+        "openai",
+        "chatgpt",
+        "git",
+        "gitscrum"
+      ],
+      "text": []
+    }
+  ]
+}
