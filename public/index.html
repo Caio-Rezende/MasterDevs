@@ -2,10 +2,7 @@
 <html lang="pt-br">
   <head>
     <title>MasterDevs</title>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="main.js" type="text/javascript"></script>
   </head>
   <body class="bg-black overflow-hidden text-base w-screen h-screen">
@@ -133,13 +130,17 @@
     </div>
     <a id="version"></a>
     <div
-      class="h-screen w-screen flex flex-col justify-center items-center text-yellow-600 z-0 relative"
+      class="h-screen w-screen text-yellow-600 z-0 relative pt-20 overflow-auto scroll-auto"
     >
-      <h1 class="text-2xl md:text-4xl xl:text-6xl font-bold mb-10">Version</h1>
-      <pre
-        id="changelogEntries"
-        class="w-full scroll-auto whitespace-pre-wrap p-3"
-      ></pre>
+      <div class="flex items-center justify-center flex-col">
+        <h1 class="text-2xl md:text-4xl xl:text-6xl font-bold mb-10">
+          Version
+        </h1>
+        <pre
+          id="changelogEntries"
+          class="w-fit h-fit whitespace-pre-wrap p-3"
+        ></pre>
+      </div>
     </div>
   </body>
 </html>
