@@ -20,7 +20,7 @@ export class InputController {
     window.addEventListener("mousemove", this.listenForMouseMove.bind(this));
     window.addEventListener("touchmove", this.listenForTouchMove.bind(this));
 
-    window.addEventListener("unload", this.dispose);
+    window.addEventListener("onunload", this.dispose);
   }
 
   dispose() {
