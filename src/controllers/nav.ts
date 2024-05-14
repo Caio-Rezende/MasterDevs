@@ -4,7 +4,7 @@ export class NavController {
   constructor(public navElements: NodeListOf<Element>) {
     window.addEventListener("hashchange", this.updateNavbar.bind(this));
 
-    window.addEventListener("unload", this.dispose);
+    window.addEventListener("onunload", this.dispose);
 
     this.updateNavbar();
   }
