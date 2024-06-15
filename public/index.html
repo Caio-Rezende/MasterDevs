@@ -1,150 +1,165 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <title>MasterDevs</title>
-    <meta name="description" content="MasterDevs home page for showcasing some samples.">
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1"
-    />
-    <script src="main.js" type="text/javascript"></script>
-  </head>
-  <body class="bg-black overflow-hidden text-base w-screen h-screen">
-    <div
-      id="navView"
-      class="fixed left-0 top-0 xl:top-auto xl:right-0 xl:left-auto xl:bottom-0 z-10"
-    ></div>
-    <a id="home"></a>
-    <div
-      class="h-screen w-screen flex flex-col justify-center items-center text-yellow-600 z-0 relative"
-    >
-      <h1 class="text-2xl md:text-4xl xl:text-6xl font-bold mb-10">
-        Welcome to
-      </h1>
-      <h1 class="text-5xl md:text-7xl xl:text-9xl font-bold font-handwrite">
-        Master Devs
-      </h1>
-    </div>
-    <a id="intro"></a>
-    <div
-      class="h-screen w-screen flex flex-col justify-center items-center text-yellow-600 z-0 relative text-center pt-28"
-    >
-      <div class="px-3 pb-10 w-full h-full scroll-auto overflow-auto">
-        <h1 class="text-2xl md:text-4xl xl:text-6xl mb-20">
-          Nice to meet you,
-          <br />
-          my name is <b title="pronounce like kyle">Caio</b>
-          <br />
-          head of the
-          <font class="font-handwrite"
-            >Master <abbr title="Developers">Devs</abbr></font
-          >.
-        </h1>
-        <p class="text-xl md:text-2xl xl:text-3xl mb-10">
-          For now, this is just a sample of <br />
-          what's published in the github at
-          <a
-            href="https://github.com/Caio-Rezende/MasterDevs"
-            target="_blank"
-            title="go to github page"
-            >Caio-Rezende/MasterDevs</a
-          >.
-        </p>
-        <p class="text-xl md:text-2xl xl:text-3xl mb-10">
-          The goal is to showcase some code samples,
-          <br />
-          do some playground and have at hand a portfolio.
-        </p>
-        <p class="text-xl md:text-2xl xl:text-3xl mb-10">
-          If you want to reach out, just send an email to
-          <a
-            href="mailto:caio@masterdevs.inf.br"
-            title="reach out through email"
-            >caio@masterdevs.inf.br</a
-          >.
-        </p>
-        <p class="text-xl md:text-2xl xl:text-3xl w-full">
-          <a
-            href="https://calendly.com/caio-masterdev/reach-out"
-            title="reach out to meet at calendly"
-            target="_blank"
-            >Reach out to meet me at this calendly link and schedule an
-            appointment.</a
-          >
-        </p>
-      </div>
-    </div>
-    <a id="playground"></a>
-    <div
-      class="h-screen w-screen text-yellow-600 z-0 relative pt-28 px-3 pb-10 flex flex-col justify-between"
-    >
-      <div
-        class="flex flex-col justify-center items-center absolute h-screen w-screen top-0 left-0 z-0 overflow-hidden"
-      >
-        <h1
-          class="text-6xl font-bold cursorApplyShadow border-red-50 bg-black rounded-full aspect-square p-0.5"
-        >
-          🔦
-        </h1>
+    <head>
+        <title>MasterDevs</title>
+        <meta
+            name="description"
+            content="MasterDevs home page for showcasing some samples."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="main.js" type="text/javascript"></script>
+    </head>
+    <body class="bg-black overflow-hidden text-base w-screen h-screen">
         <div
-          class="absolute bg-black w-[10%] aspect-square rounded-full z-10 text-black inline-flex justify-center items-center min-w-fit p-1"
-          id="hiddenNode"
+            id="navView"
+            class="fixed left-0 top-0 xl:top-auto xl:right-0 xl:left-auto xl:bottom-0 z-10"
+        ></div>
+        <a href="/">
+            <img
+                src="caio_transp_bg.png"
+                alt="caio's portrait"
+                class="lg:w-40 lg:h-40 sm:w-32 sm:h-32 w-20 h-20 object-cover p-2 rounded-full border-yellow-600 border-2 fixed top-10 right-10 z-20"
+            />
+        </a>
+        <a id="home"></a>
+        <div
+            class="h-screen w-screen flex flex-col justify-center items-center text-yellow-600 z-0 relative"
         >
-          Found me!
-        </div>
-      </div>
-      <h1 class="text-2xl md:text-4xl xl:text-6xl font-bold z-10">
-        Find the circle
-      </h1>
-      <h1
-        class="text-sm md:text-base xl:text-xl font-bold z-10 hidden md:block"
-      >
-        Move the cursor and use the 🔦's light
-      </h1>
-      <h1 class="text-sm md:text-base xl:text-xl font-bold z-10 md:hidden">
-        Move your finger on the screen and use the 🔦's light
-      </h1>
-    </div>
-    <a id="blog"></a>
-    <div
-      class="h-screen w-screen flex flex-col justify-center items-center text-yellow-600 z-0 relative"
-    >
-      <h1 class="text-2xl md:text-4xl xl:text-6xl font-bold">Blog</h1>
-      <div
-        class="mt-8 w-4/5 max-h-[60vh] border-yellow-200 border overflow-auto scrollbar-thin"
-        id="blogEntries"
-      >
-        <template>
-          <div class="p-4 xl:p-8 my-6 xl:my-10 group">
-            <span class="float-right italic">01/01/2000</span>
-            <h2 class="text-lg font-bold mb-4 xl:mb-8">test</h2>
-            <details
-              class="max-h-96 overflow-auto scrollbar-thumb-white scrollbar-thin"
+            <h1 class="text-2xl md:text-4xl xl:text-6xl font-bold mb-10">
+                Welcome to
+            </h1>
+            <h1
+                class="text-5xl md:text-7xl xl:text-9xl font-bold font-handwrite"
             >
-              <summary
-                class="hover:cursor-pointer hover:text-yellow-500"
-              ></summary>
-              <p class="m-1 xl:m-2 text-lg group-hover:opacity-100 opacity-60">
-                lorem ipsum
-              </p>
-            </details>
-          </div>
-        </template>
-      </div>
-    </div>
-    <a id="version"></a>
-    <div
-      class="h-screen w-screen text-yellow-600 z-0 relative pt-20 overflow-auto scroll-auto"
-    >
-      <div class="flex items-center justify-center flex-col">
-        <h1 class="text-2xl md:text-4xl xl:text-6xl font-bold mb-10">
-          Version
-        </h1>
-        <pre
-          id="changelogEntries"
-          class="w-fit h-fit whitespace-pre-wrap p-3"
-        ></pre>
-      </div>
-    </div>
-  </body>
+                Master Devs
+            </h1>
+        </div>
+        <a id="intro"></a>
+        <div
+            class="h-screen w-screen flex flex-col text-yellow-600 z-0 relative"
+        >
+            <div class="px-3 pb-10 w-full h-full scroll-auto overflow-auto">
+                <div class="h-28"></div>
+                <h1 class="text-2xl md:text-4xl xl:text-6xl mb-20">
+                    Nice to meet you,
+                    <br />
+                    my name is <b title="pronounce like kyle">Caio</b>
+                    <br />
+                    head of the
+                    <font class="font-handwrite"
+                        >Master <abbr title="Developers">Devs</abbr></font
+                    >.
+                </h1>
+                <p class="text-xl md:text-2xl xl:text-3xl mb-10">
+                    For now, this is just a sample of <br />
+                    what's published in the github at
+                    <a
+                        href="https://github.com/Caio-Rezende/MasterDevs"
+                        target="_blank"
+                        title="go to github page"
+                        >Caio-Rezende/MasterDevs</a
+                    >.
+                </p>
+                <p class="text-xl md:text-2xl xl:text-3xl mb-10">
+                    The goal is to showcase some code samples,
+                    <br />
+                    do some playground and have at hand a portfolio.
+                </p>
+                <p class="text-xl md:text-2xl xl:text-3xl mb-10">
+                    If you want to reach out, just send an email to
+                    <a
+                        href="mailto:caio@masterdevs.inf.br"
+                        title="reach out through email"
+                        >caio@masterdevs.inf.br</a
+                    >.
+                </p>
+                <p class="text-xl md:text-2xl xl:text-3xl w-full">
+                    <a
+                        href="https://calendly.com/caio-masterdev/reach-out"
+                        title="reach out to meet at calendly"
+                        target="_blank"
+                        >Reach out to meet me at this calendly link and schedule
+                        an appointment.</a
+                    >
+                </p>
+                <div class="h-28"></div>
+            </div>
+        </div>
+        <a id="playground"></a>
+        <div
+            class="h-screen w-screen text-yellow-600 z-0 relative pt-28 px-3 pb-10 flex flex-col justify-between"
+        >
+            <div
+                class="flex flex-col justify-center items-center absolute h-screen w-screen top-0 left-0 z-0 overflow-hidden"
+            >
+                <h1
+                    class="text-6xl font-bold cursorApplyShadow border-red-50 bg-black rounded-full aspect-square p-0.5"
+                >
+                    🔦
+                </h1>
+                <div
+                    class="absolute bg-black w-[10%] aspect-square rounded-full z-10 text-black inline-flex justify-center items-center min-w-fit p-1"
+                    id="hiddenNode"
+                >
+                    Found me!
+                </div>
+            </div>
+            <h1 class="text-2xl md:text-4xl xl:text-6xl font-bold z-10">
+                Find the circle
+            </h1>
+            <h1
+                class="text-sm md:text-base xl:text-xl font-bold z-10 hidden md:block"
+            >
+                Move the cursor and use the 🔦's light
+            </h1>
+            <h1
+                class="text-sm md:text-base xl:text-xl font-bold z-10 md:hidden"
+            >
+                Move your finger on the screen and use the 🔦's light
+            </h1>
+        </div>
+        <a id="blog"></a>
+        <div
+            class="h-screen w-screen flex flex-col justify-center items-center text-yellow-600 z-0 relative"
+        >
+            <h1 class="text-2xl md:text-4xl xl:text-6xl font-bold">Blog</h1>
+            <div
+                class="mt-8 w-4/5 max-h-[60vh] border-yellow-200 border overflow-auto scrollbar-thin"
+                id="blogEntries"
+            >
+                <template>
+                    <div class="p-4 xl:p-8 my-6 xl:my-10 group">
+                        <span class="float-right italic">01/01/2000</span>
+                        <h2 class="text-lg font-bold mb-4 xl:mb-8">test</h2>
+                        <details
+                            class="max-h-96 overflow-auto scrollbar-thumb-white scrollbar-thin"
+                        >
+                            <summary
+                                class="hover:cursor-pointer hover:text-yellow-500"
+                            ></summary>
+                            <p
+                                class="m-1 xl:m-2 text-lg group-hover:opacity-100 opacity-60"
+                            >
+                                lorem ipsum
+                            </p>
+                        </details>
+                    </div>
+                </template>
+            </div>
+        </div>
+        <a id="version"></a>
+        <div
+            class="h-screen w-screen text-yellow-600 z-0 relative pt-20 overflow-auto scroll-auto"
+        >
+            <div class="flex items-center justify-center flex-col">
+                <h1 class="text-2xl md:text-4xl xl:text-6xl font-bold mb-10">
+                    Version
+                </h1>
+                <pre
+                    id="changelogEntries"
+                    class="w-fit h-fit whitespace-pre-wrap p-3"
+                ></pre>
+            </div>
+        </div>
+    </body>
 </html>
